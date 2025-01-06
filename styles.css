@@ -1,0 +1,642 @@
+/* Light Theme */
+
+
+/* custom Cursor */
+/* Cursor Container */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    pointer-events: none; /* Ensure the cursor doesn't interfere */
+    z-index: 10000; /* Make sure it's always on top */
+    opacity: 1;
+    transition: opacity 0.2s ease, transform 0.1s ease-out;
+}
+
+/* Cursor Content Wrap */
+.cursor-content-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+/* Cursor Content */
+.cursor-content {
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+}
+
+/* Highlight Circle */
+.cursor-highlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 9999; /* Slightly below the cursor */
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+button:hover,
+a:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    color: #333; /* Change text color */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    position: relative; /* Required to avoid z-index issues */
+}
+
+/* Custom Cursor During Button Hover */
+button:hover ~ #cursor,
+a:hover ~ #cursor {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker cursor on hover */
+    transform: scale(1.1); /* Slightly larger */
+}
+
+* {
+    cursor: none; /* Completely hide the default cursor */
+}
+
+/* General Styles */
+body {
+    font-family: 'Inter Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white; /* Neutral background for professionalism */
+    background: linear-gradient(90deg, #009688, #3f51b5);
+    color: #333;
+    line-height: 1.6;
+}
+
+
+
+
+/* Navigation Bar */
+/* Navbar Styling */
+
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    width: 100%; /* Ensures the navbar spans the full width of the viewport */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-left h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #355bae;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.theme-icon {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-right: 40px;
+}
+
+.theme-icon:hover {
+    color: #355bae;
+}
+
+/* Alignment Fix for Nav and Education Heading */
+h1.nav-logo {
+    margin-top: 0; /* Adjust as necessary for alignment */
+}
+
+h2.section-heading {
+    margin-top: 0;
+    padding-top: 0;
+    text-align: left;
+    font-weight: bold;
+    color: #355bae;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home Section */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 30px;
+    padding-top: 70px;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.intro-right {
+    max-width: 700px;
+    line-height: 1.6;
+    margin-right: 3px;
+}
+
+.intro-right h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.intro-right p {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0077b5;
+    transform: scale(1.2);
+}
+
+
+/* Education Section */
+/* Education Section Styling */
+.education-section {
+    padding: 50px 20px;
+    background-color: #f8f8f8; /* Light grey background */
+    padding-top: 40px;
+}
+
+.section-title {
+    text-align: left; /* Move to the left */
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+    margin-left: 20px; /* Add left margin to align with cards */
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #355bae;
+    margin: 10px 0 0 0; /* Adjust underline spacing */
+}
+
+/* Education Container */
+.education-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Adjust for smaller screens */
+    margin-top: 30px;
+}
+
+/* Individual Cards */
+.education-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1;
+    max-width: 48%; /* Ensures two cards fit side-by-side */
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.college-logo {
+    width: 60px; /* Adjustable logo size */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.education-content {
+    flex: 1;
+}
+
+.college-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.college-link {
+    text-decoration: none;
+    color: #355bae; /* Highlighted hyperlink */
+    transition: color 0.3s ease;
+}
+
+.college-link:hover {
+   
+    color: #003f8c; /* Darker blue on hover */
+}
+
+/* Degree Styling */
+.degree {
+    font-size: 1rem;
+    color: grey; /* Highlighted course */
+    margin-bottom: 5px;
+}
+
+/* Duration and GPA */
+.duration {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.gpa {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Coursework Styling */
+.coursework {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.coursework span {
+    background: #eaeaea;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+/* Experience Section */
+/* Experience Section */
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #355bae;
+    margin-top: 10px;
+}
+
+
+#experience {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 900px;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #355bae;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    background: #355bae;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    color: #355bae;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+    color: #333;
+    
+}
+
+.timeline-content ul {
+    margin-top: 10px;
+    list-style: disc;
+    padding-left: 20px;
+    text-align: left;
+}
+
+
+
+/* Projects Section */
+
+
+/* Contact Section */
+
+.contact-section {
+    /* padding: 50px 20px; */
+    padding: 40px 20px; /* Adjust as needed */
+    background-color: #f8f8f8;
+    margin: 0; /* Remove extra margins */
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #355bae;
+    margin-top: 10px;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Contact Details Styling */
+.contact-details {
+    flex: 1;
+    max-width: 45%;
+    padding: 10px;
+    font-size: 1rem;
+    padding-left: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #355bae;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 1.5rem;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.icon.linkedin {
+    background-color: #0077b5;
+}
+
+.icon.linkedin:hover {
+    background-color: #005983;
+}
+
+.icon.github {
+    background-color: #333;
+}
+
+.icon.github:hover {
+    background-color: #555;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #ffcc00;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded edges */
+    transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    max-width: 45%;
+    padding-right: 55px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    height: 50px;
+}
+
+/* Contact Form Send Button */
+.send-btn {
+    display: inline-flex; /* Use inline-flex to size according to content */
+    align-items: center;
+    gap: 8px;
+    background-color: #355bae;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Adjust the font size */
+    font-weight: bold;
+    padding: 8px 12px; /* Reduced padding for a snug fit */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding-right: 0;
+    width: 100px;
+}
+
+.send-btn:hover {
+    background-color: #003f8c;
+}
+
+/* footer section */
+/* Footer Styling */
+.footer {
+    background-color: #355bae; /* Contrast background color */
+    color: white; /* Text color for contrast */
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    margin: 0; /* Remove extra margins */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0
+}
+
+.footer-message {
+    font-size: 16px;
+    margin: 0;
+    color: #ffffff; /* Bright white text for better readability */
+}
