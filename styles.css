@@ -455,7 +455,133 @@ h2.section-heading {
 
 
 /* Projects Section */
+/* Section Header */
+.section-header {
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  /* .section-header h2 {
+    font-size: 2rem;
+    color: black;
+  }
+  .section-header .underline {
+    width: 100px;
+    height: 4px;
+    background-color: #355bae;
+    margin: 10px 0 0;
+    border-radius: 2px;
+  } */
 
+
+  .section-header h2 {
+    text-align: left; /* Move to the left */
+    font-size: 2rem;
+    color: #333;
+    position: relative;
+    margin-bottom: 0;
+    margin-left: 20px; 
+}
+
+.section-header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #355bae;
+    margin: 10px 0 0 0; /* Adjust underline spacing */
+    margin-left: 20px; 
+}
+
+
+
+  
+  /* Projects Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Center alignment */
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+  
+
+.projects-grid .project-card:nth-child(4),
+.projects-grid .project-card:nth-child(5) {
+  grid-column: span 1; /* Make each card span one column */
+}
+
+
+  
+  /* Project Card */
+  .project-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    max-width: 350px;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Project Card Content */
+  .project-card h3 {
+    font-size: 1.5rem;
+    color: #355bae;
+    margin-bottom: 10px;
+  }
+  .project-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Tools List */
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .tools span {
+    background-color: #eef5ff;
+    color: #355bae;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #355bae;
+  }
+  
+  /* Button */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #355bae;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #1e3f7a;
+  }
+  
+  /* Section Background */
+  #projects {
+    background-color: #ffffff;
+    padding: 40px 0;
+  }
+  
 
 /* Contact Section */
 
