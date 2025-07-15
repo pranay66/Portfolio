@@ -21,19 +21,7 @@ HTML5	Profile Image	Font Awesome (Icons)
 CSS3	University Logos	Google Fonts (if used)
 JavaScript		formsubmit.co (for contact form)
 
-Project Structure:
 
-bash
-Copy
-Edit
-/project-root
-│
-├── index.html               # Main HTML file
-├── styles.css               # Custom styles
-├── script.js                # Theme toggle and JS behavior
-├── updated_portfolio_image.JPG  # Profile image
-├── unt.png                  # UNT logo
-├── Jntuh_logo.png           # JNTUH logo
 🌟 Features
 Fully responsive design
 
